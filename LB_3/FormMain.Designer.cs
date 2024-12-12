@@ -31,10 +31,14 @@
             dataGridViewUsers = new DataGridView();
             buttonSave = new Button();
             panelTop = new Panel();
-            panelFill = new Panel();
+            panelLeft = new Panel();
+            panel1 = new Panel();
+            dataGridViewPosts = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).BeginInit();
             panelTop.SuspendLayout();
-            panelFill.SuspendLayout();
+            panelLeft.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPosts).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewUsers
@@ -43,43 +47,65 @@
             dataGridViewUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewUsers.Dock = DockStyle.Fill;
             dataGridViewUsers.Location = new Point(10, 10);
-            dataGridViewUsers.Margin = new Padding(4, 4, 4, 4);
+            dataGridViewUsers.Margin = new Padding(4);
             dataGridViewUsers.Name = "dataGridViewUsers";
-            dataGridViewUsers.Size = new Size(1009, 532);
+            dataGridViewUsers.Size = new Size(505, 532);
             dataGridViewUsers.TabIndex = 0;
+            dataGridViewUsers.SelectionChanged += DataGridViewUsers_SelectionChanged;
             // 
             // buttonSave
             // 
             buttonSave.Dock = DockStyle.Left;
             buttonSave.Location = new Point(13, 14);
-            buttonSave.Margin = new Padding(4, 4, 4, 4);
+            buttonSave.Margin = new Padding(4);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(96, 50);
             buttonSave.TabIndex = 1;
             buttonSave.Text = "Сохранить";
             buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += this.ButtonSave_Click;
             // 
             // panelTop
             // 
             panelTop.Controls.Add(buttonSave);
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(0, 0);
-            panelTop.Margin = new Padding(4, 4, 4, 4);
+            panelTop.Margin = new Padding(4);
             panelTop.Name = "panelTop";
             panelTop.Padding = new Padding(13, 14, 13, 14);
             panelTop.Size = new Size(1029, 78);
             panelTop.TabIndex = 2;
             // 
-            // panelFill
+            // panelLeft
             // 
-            panelFill.Controls.Add(dataGridViewUsers);
-            panelFill.Dock = DockStyle.Fill;
-            panelFill.Location = new Point(0, 78);
-            panelFill.Margin = new Padding(4, 4, 4, 4);
-            panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(1029, 552);
-            panelFill.TabIndex = 3;
+            panelLeft.Controls.Add(dataGridViewUsers);
+            panelLeft.Dock = DockStyle.Left;
+            panelLeft.Location = new Point(0, 78);
+            panelLeft.Margin = new Padding(4);
+            panelLeft.Name = "panelLeft";
+            panelLeft.Padding = new Padding(10);
+            panelLeft.Size = new Size(525, 552);
+            panelLeft.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(dataGridViewPosts);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(525, 78);
+            panel1.Name = "panel1";
+            panel1.Padding = new Padding(10);
+            panel1.Size = new Size(504, 552);
+            panel1.TabIndex = 4;
+            // 
+            // dataGridViewPosts
+            // 
+            dataGridViewPosts.BackgroundColor = Color.White;
+            dataGridViewPosts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewPosts.Dock = DockStyle.Fill;
+            dataGridViewPosts.Location = new Point(10, 10);
+            dataGridViewPosts.Name = "dataGridViewPosts";
+            dataGridViewPosts.Size = new Size(484, 532);
+            dataGridViewPosts.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -87,15 +113,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1029, 630);
-            Controls.Add(panelFill);
+            Controls.Add(panel1);
+            Controls.Add(panelLeft);
             Controls.Add(panelTop);
             Font = new Font("Segoe UI", 12F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormMain";
             Text = "Пользователи";
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
             panelTop.ResumeLayout(false);
-            panelFill.ResumeLayout(false);
+            panelLeft.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPosts).EndInit();
             ResumeLayout(false);
         }
 
@@ -104,6 +133,8 @@
         private DataGridView dataGridViewUsers;
         private Button buttonSave;
         private Panel panelTop;
-        private Panel panelFill;
+        private Panel panelLeft;
+        private Panel panel1;
+        private DataGridView dataGridViewPosts;
     }
 }
